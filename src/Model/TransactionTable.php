@@ -21,22 +21,14 @@ class TransactionTable
          `amount`, 
          `status`, 
          `description`, 
-         `created`, 
-         `birth_date`, 
-         `email`, 
-         `phone`, 
-         `avatar_path`
+         `createdAt`, 
         )
         VALUES 
             (
-             :first_name, 
-             :last_name, 
-             :middle_name, 
-             :gender, 
-             :birth_date, 
-             :email, 
-             :phone, 
-             :avatar_path
+             :amount, 
+             :status
+             :description, 
+             :createdAt,
              )";
     }
 }
