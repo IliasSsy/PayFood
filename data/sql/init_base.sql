@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS `user`
     `avatar_path` VARCHAR(255) DEFAULT NULL,
 
     PRIMARY KEY (`user_id`),
-UNIQUE INDEX `email_idx` (`email`)
 )
 
 ENGINE = InnoDB

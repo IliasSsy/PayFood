@@ -1,4 +1,3 @@
-CREATE DATABASE NOT EXISTS PayFood;
 USE PayFood;
 
 CREATE TABLE IF NOT EXISTS `transactions`
@@ -13,6 +12,13 @@ CREATE TABLE IF NOT EXISTS `transactions`
     PRIMARY KEY (`transaction_id`)
     UNIQUE INDEX `user_id_idx` (`user_id`)
     INDEX `created_at_idx` (`created_at`)
+    INDEX `status_idx` (`status`)
+
+    CONSTRAINT `transactions_user`
+        FOREIGN KEY (`user_id`)
+        REFERENCES `users` (`user_id`)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
 
 )
 
