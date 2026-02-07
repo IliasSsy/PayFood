@@ -12,7 +12,6 @@ class User
         private ?string $middleName,
         private int     $balance,
         private string  $email,
-        private ?string $avatarPath
     )
     {
     }
@@ -69,15 +68,6 @@ class User
     public function setEmail(string $email): void
     {
         $this->email = $email;
-    }
-    function getAvatarPath(): ?string
-    {
-        return $this->avatarPath;
-    }
-
-    function setAvatarPath(?string $avatarPath): void
-    {
-        $this->avatarPath = $avatarPath;
     }
 
     function convertInfoToArray(): array

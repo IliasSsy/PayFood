@@ -22,15 +22,13 @@ class UserTable
          `last_name`, 
          `middle_name`, 
          `email`, 
-         `avatar_path`
         )
         VALUES 
             (
              :first_name, 
              :last_name, 
              :middle_name, 
-             :email, 
-             :avatar_path
+             :email
              )";
 
         try {
@@ -40,7 +38,7 @@ class UserTable
         } catch (PDOException $e) {
         if (str_contains($e->getMessage(), 'Duplicate entry')) {
 
-            if (str_contains($e->getMessage(), 'email_idx')) {
+            if (str_contains($e->getMessage(), 'email')) {
                 throw new RuntimeException('Email already exists');
                 }
             }
@@ -62,8 +60,7 @@ class UserTable
             $userInfo['first_name'],
             $userInfo['last_name'],
             !empty($userInfo['middle_name']) ? $userInfo['middle_name'] : null,
-            $userInfo['email'],
-            !empty($userInfo['avatar_path']) ? $userInfo['avatar_path'] : null,
+            $userInfo['email']
 
         );
     }
