@@ -9,7 +9,7 @@ class Transaction
         private ?int   $transactionId,
         private int  $userId,
         private float $amount,
-        private string $status,
+        private string $transactionType,
         private string $description,
         private string $createdAt
     )
@@ -36,14 +36,14 @@ class Transaction
         $this->amount = $amount;
     }
 
-    function getStatus(): string
+    function getTransationType(): string
     {
-        return $this->status;
+        return $this->transactionType;
     }
 
-    public function setStatus(string $status): void
+    public function setTransationType(string $status): void
     {
-        $this->status = $status;
+        $this->transactionType = $transactionType;
     }
 
     function getDescription(): string
