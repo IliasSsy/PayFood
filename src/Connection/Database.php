@@ -32,10 +32,12 @@ class Database
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES => false,
+                    PDO::ATTR_STRINGIFY_FETCHES => false,
                 ]
             );
         } catch (PDOException $e) {
-            throw new PDOException('DB error: ' . $e->getMessage());
+            throw new PDOException('Error: ' . $e->getMessage());
         }
 
         return self::$connection;
