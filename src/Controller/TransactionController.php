@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Table\TransactionTable;
+use App\Model\TransactionTable;
 use App\Model\Transaction;
 use PDO;
 
