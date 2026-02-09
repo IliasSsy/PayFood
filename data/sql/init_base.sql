@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS `user`
     `last_name` VARCHAR(255) NOT NULL,
     `balance` DECIMAL(10, 2) DEFAULT 0.00,
     `email` VARCHAR(255) NOT NULL,
-    `avatar_path` VARCHAR(255) DEFAULT NULL,
 
     PRIMARY KEY (`user_id`),
 )
